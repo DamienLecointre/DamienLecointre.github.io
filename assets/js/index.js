@@ -22,14 +22,14 @@ emojiContainer.addEventListener("click", () => {
   lineBig.style.transition = "2s ease-in";
   lineSmall.style.transform = "translateX(100vw)";
   lineSmall.style.transition = "2s ease-in";
-  emoji.style.transform = "translateX(100vw) rotate(30deg)";
+  emoji.style.transform = "translateX(100vw) ";
   emoji.style.transition = "2s ease-in";
-  // handBackFist.classList.add("show");
   handBackFist.style.transform = "translateX(100vw) rotate(280deg)";
+  handBackFist.style.opacity = 1;
+  handBackFist.style.visibility = "visible";
   handBackFist.style.transition = "2s ease-in";
   handPointRight.style.transform = "translateX(100vw)";
   handPointRight.style.opacity = 1;
-  handPointRight.style.visibilty = "visible";
   handPointRight.style.transition = "2s ease-in";
   nav.style.transform = "translateX(0)";
   nav.style.transition = "1s ease-in";
