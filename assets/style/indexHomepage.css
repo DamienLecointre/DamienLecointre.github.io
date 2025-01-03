@@ -34,6 +34,7 @@ a {
 
 #hero-container .container {
   height: 100vh;
+  height: var(--vh, 100vh);
   width: 100%;
   display: grid;
   grid-template-rows: 1fr;
@@ -50,11 +51,11 @@ a {
 #hero-container .title-container h2 {
   position: absolute;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 100;
   color: #F7F7FF;
   right: 0;
-  bottom: -23px;
+  bottom: -27px;
 }
 #hero-container .nav-container {
   position: relative;
@@ -67,7 +68,7 @@ a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 500;
   color: #0e0901;
   line-height: 1.2;
@@ -272,6 +273,7 @@ a {
 #hero-container ul {
   position: absolute;
   bottom: 0;
+  padding-left: 0.5em;
 }
 #hero-container ul::before {
   content: "";
@@ -279,7 +281,7 @@ a {
   height: 100%;
   width: 2px;
   background: #0e0901;
-  left: -7px;
+  left: -2px;
 }
 #hero-container li:hover a::after {
   width: 100%;

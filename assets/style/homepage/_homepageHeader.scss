@@ -2,6 +2,7 @@
 
   .container {
     height: 100vh;
+    height: var(--vh, 100vh);
     width: 100%;
     display: grid;
     grid-template-rows: 1fr;
@@ -19,11 +20,11 @@
     h2 {
       position: absolute;
       font-family: $font-secondary;
-      font-size: $font-size96;
+      font-size: $font-size112;
       font-weight: $font-weight100;
       color: $font-color-secondary;
       right: 0;
-      bottom: -23px;
+      bottom: -27px;
     }
   }
 
@@ -33,14 +34,10 @@
     width: 100%;
     overflow: hidden;
 
-    // .text-content {
-    //   transition: $transition-medium;
-    // }
-
     h1 {
       position: absolute;
       width: fit-content;
-      font-size: $font-size08;
+      font-size: $font-size09;
       font-weight: $font-weight500;
       color: $font-color-primary;
       line-height: 1.2;
@@ -61,35 +58,13 @@
       height: 100%;
       left: 25px;
       bottom: 60px;
-      // transition: $transition-medium;
     }
 
     .line-small {
       height: 3rem;
       left: 25px;
       bottom: 0;
-      // transition: $transition-medium;
     }
-
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   width: 2px;
-    //   height: 3rem;
-    //   background-color: $bg-secondary-color;
-    //   left: 25px;
-    //   bottom: 0;
-    // }
-
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   width: 2px;
-    //   height: 100%;
-    //   background-color: $bg-secondary-color;
-    //   left: 25px;
-    //   bottom: 60px;
-    // }
   }
 
   .emoji-content {
@@ -123,10 +98,6 @@
       visibility: visible;
       transform: translateX(-20%) rotate(280deg);
     }
-
-    // &:hover .fa-hand {
-    //   opacity: 0;
-    // }
 
     &:hover .fa-hand-point-right {
       opacity: 1;
@@ -229,10 +200,6 @@
     color: $font-color-primary;
   }
 
-  // .emoji-hands {
-  //   transition: $transition-small;
-  // }
-
   .fa-hand-back-fist {
     position: absolute;
     left: 25px;
@@ -246,30 +213,7 @@
   // .fa-hand-back-fist.show {
   //   opacity: 1;
   //   visibility: visible;
-  // }
-
-  // .fa-hand {
-  //   position: absolute;
-  //   left: 80px;
-  //   bottom: 40px;
-  //   opacity: 1;
-  //   transition: $transition-small;
-  //   animation: handHello $animation-speed;
-
-  //   @keyframes handHello {
-  //     25% {
-  //       transform: rotate(-20deg);
-  //     }
-  //     50% {
-  //       transform: rotate(0deg);
-  //     }
-  //     75% {
-  //       transform: rotate(20deg);
-  //     }
-  //     100% {
-  //       transform: rotate(0deg);
-  //     }
-  //   }
+  //   transform: translateX(-20%) rotate(280deg);
   // }
 
   .fa-hand-point-right {
@@ -294,6 +238,7 @@
   ul {
     position: absolute;
     bottom: 0;
+    padding-left: 0.5em;
 
     &::before {
       content: "";
@@ -301,7 +246,7 @@
       height: 100%;
       width: 2px;
       background: $bg-secondary-color;
-      left: -7px;
+      left: -2px;
     }
   }
 
