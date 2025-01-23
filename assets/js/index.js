@@ -212,6 +212,9 @@ resumeLink.addEventListener("click", () => {
 
 // SLIDERS RESUME SECTION
 
+const titleTab1 = document.querySelector(".title-tab1");
+const titleTab2 = document.querySelector(".title-tab2");
+const titleTab3 = document.querySelector(".title-tab3");
 const tabChevron1 = document.querySelector(".tab-chevron1");
 const tabChevron2 = document.querySelector(".tab-chevron2");
 const tabContainer = document.querySelector(".tab-container");
@@ -224,14 +227,18 @@ const formationWrapperResponsive = document.querySelector(
   ".formation-wrapper-responsive"
 );
 
+console.log(titleTab1);
+
 tabChevron1.addEventListener("click", () => {
   resumeWrapper.classList.toggle("competence-show");
+  titleTab1.classList.toggle("title-tab-hidden");
   tabChevron1.classList.toggle("chevron-rotate");
   skillsWrapperResponsive.classList.toggle("skills-wrapper-responsive-show");
 });
 
 tabChevron2.addEventListener("click", () => {
   resumeWrapper.classList.toggle("formations-show");
+  titleTab2.classList.toggle("title-tab-hidden");
   tabChevron2.classList.toggle("chevron-rotate");
   formationWrapperResponsive.classList.toggle(
     "formation-wrapper-responsive-show"

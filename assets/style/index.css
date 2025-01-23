@@ -58,7 +58,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-#homepage-container .nav-mobile-wrapper, #homepage-container .line-mobile-bottom, #homepage-container .line-mobile-top, #homepage-container .formation-wrapper-responsive, #homepage-container .resume-wrapper, #homepage-container .skills-wrapper-responsive, #homepage-container .tab-wrapper, #homepage-container .nav-container li::after, #homepage-container .text-show, #homepage-container .portfolio-arrow {
+#homepage-container .nav-mobile-wrapper, #homepage-container .line-mobile-bottom, #homepage-container .line-mobile-top, #homepage-container .formation-wrapper-responsive, #homepage-container .resume-wrapper, #homepage-container .skills-wrapper-responsive, #homepage-container .title-tab2, #homepage-container .title-tab1, #homepage-container .tab-wrapper, #homepage-container .nav-container li::after, #homepage-container .text-show, #homepage-container .portfolio-arrow {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -1680,21 +1680,10 @@ p {
     padding-bottom: 0.8em;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 570px) {
   #homepage-container .about-title {
-    padding-bottom: 1em;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #homepage-container .about-title {
-    font-size: 6rem;
-    height: 100%;
-    text-align: end;
-    -webkit-writing-mode: sideways-lr;
-        -ms-writing-mode: sideways-lr;
-            writing-mode: sideways-lr;
-    padding-top: 0.6em;
-    padding-bottom: 0;
+    font-size: 12rem;
+    padding-bottom: 0.4em;
   }
 }
 #homepage-container .about-title-slide-up {
@@ -1873,10 +1862,13 @@ p {
 }
 @media only screen and (max-width: 710px) {
   #homepage-container .resume-container h3 {
-    -webkit-writing-mode: sideways-lr;
-        -ms-writing-mode: sideways-lr;
-            writing-mode: sideways-lr;
-    padding-top: 30px;
+    padding-top: 55px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #homepage-container .resume-container h3 {
+    font-size: 12rem;
+    padding-top: 80px;
   }
 }
 #homepage-container .resume-container h4:not(.title-section, .title-tab) {
@@ -1943,6 +1935,17 @@ p {
     padding-top: 9em;
   }
 }
+@media only screen and (max-width: 570px) {
+  #homepage-container .tab-container {
+    height: 83.5%;
+    padding-top: 5em;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #homepage-container .tab-formation {
+    height: 78%;
+  }
+}
 #homepage-container .tab-experience {
   display: none;
   height: 100%;
@@ -1973,13 +1976,20 @@ p {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
+@media only screen and (max-width: 710px) {
+  #homepage-container .tab-wrapper i {
+    font-size: 1.2rem;
+  }
+}
 #homepage-container .tab-chevron3 {
   -webkit-transform: scale(1) rotate(180deg);
           transform: scale(1) rotate(180deg);
 }
-#homepage-container .tab-chevron3:hover {
-  -webkit-transform: scale(1.2) rotate(180deg);
-          transform: scale(1.2) rotate(180deg);
+@media only screen and (max-width: 570px) {
+  #homepage-container .tab-chevron3 {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
 }
 #homepage-container .chevron-rotate {
   -webkit-animation: chevronRotate 0.5s ease-in-out forwards;
@@ -1999,12 +2009,30 @@ p {
 }
 #homepage-container .title-tab {
   position: absolute;
-  -webkit-writing-mode: sideways-lr;
-      -ms-writing-mode: sideways-lr;
-          writing-mode: sideways-lr;
-  top: 0;
-  right: 0;
   padding: 0 0.5em;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+@media only screen and (max-width: 710px) {
+  #homepage-container .title-tab {
+    font-size: 1rem;
+  }
+}
+#homepage-container .title-tab1 {
+  top: 60px;
+  left: -54px;
+}
+#homepage-container .title-tab2 {
+  top: 48px;
+  left: -38px;
+}
+#homepage-container .title-tab3 {
+  top: 48px;
+  right: -45px;
+}
+#homepage-container .title-tab-hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 #homepage-container .tab-underline {
   position: absolute;
@@ -2048,6 +2076,11 @@ p {
 @media only screen and (max-width: 630px) {
   #homepage-container .resume-wrapper {
     grid-template-columns: 10% 10% 1fr;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #homepage-container .resume-wrapper {
+    grid-template-columns: 10% 10% 10% 1fr;
   }
 }
 #homepage-container .competence-show {
@@ -2280,6 +2313,11 @@ p {
     padding: 0 0 0 2em;
   }
 }
+@media only screen and (max-width: 570px) {
+  #homepage-container .experience-container {
+    margin-top: 5.1em;
+  }
+}
 #homepage-container .experience-wrapper-responsive {
   position: relative;
   max-height: 395px;
@@ -2287,6 +2325,12 @@ p {
   padding-right: 1em;
   margin-right: 3em;
   z-index: 500;
+}
+@media only screen and (max-width: 570px) {
+  #homepage-container .experience-wrapper-responsive {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 #homepage-container .experience-content,
 #homepage-container .experience-content-responsive {

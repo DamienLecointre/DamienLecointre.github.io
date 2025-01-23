@@ -34,8 +34,12 @@
       }
 
       @media only screen and (max-width: 710px) {
-        writing-mode: sideways-lr;
-        padding-top: 30px;
+        padding-top: 55px;
+      }
+
+      @media only screen and (max-width: 570px) {
+        font-size: 12rem;
+        padding-top: 80px;
       }
     }
 
@@ -73,6 +77,7 @@
 
   .title-section1,
   .title-section2 {
+
     @media only screen and (max-width: 1520px) {
       display: none;
       opacity: 0;
@@ -100,6 +105,18 @@
     @media only screen and (max-width: 960px) {
       height: 61%;
       padding-top: 9em;
+    }
+
+    @media only screen and (max-width: 570px) {
+      height: 83.5%;
+      padding-top: 5em;
+    }
+  }
+
+  .tab-formation {
+
+    @media only screen and (max-width: 570px) {
+      height: 78%;
     }
   }
 
@@ -134,14 +151,18 @@
       &:hover {
         transform: scale(1.2);
       }
+
+      @media only screen and (max-width: 710px) {
+        font-size: $font-size19;
+      }
     }
   }
 
   .tab-chevron3 {
     transform: scale(1) rotate(180deg);
 
-    &:hover {
-      transform: scale(1.2) rotate(180deg);
+    @media only screen and (max-width: 570px) {
+      transform: scale(1) rotate(0);
     }
   }
 
@@ -157,10 +178,34 @@
 
   .title-tab {
     position: absolute;
-    writing-mode: sideways-lr;
-    top: 0;
-    right: 0;
     padding: 0 $space-tiny1;
+    transform: rotate(-90deg);
+
+    @media only screen and (max-width: 710px) {
+      font-size: $font-size16;
+    }
+  }
+
+  .title-tab1 {
+    top: 60px;
+    left: -54px;
+    @extend%transition-medium-all;
+  }
+
+  .title-tab2 {
+    top: 48px;
+    left: -38px;
+    @extend%transition-medium-all;
+  }
+
+  .title-tab3 {
+    top: 48px;
+    right: -45px;    
+  }
+
+  .title-tab-hidden {
+    opacity: 0;
+    visibility: hidden;
   }
 
   .tab-underline {
@@ -206,6 +251,10 @@
     
     @media only screen and (max-width: 630px) {
       grid-template-columns: 10% 10% 1fr;
+    }
+
+    @media only screen and (max-width: 570px) {
+      grid-template-columns: 10% 10% 10% 1fr;
     }
   }
 
@@ -408,6 +457,10 @@
       overflow-y: visible;
       padding: 0 0 0 2em;
     }
+
+    @media only screen and (max-width: 570px) {
+      margin-top: 5.1em;
+    }
   }
 
   .experience-wrapper-responsive {
@@ -417,6 +470,11 @@
     padding-right: 1em;
     margin-right: 3em;
     z-index: 500;
+
+    @media only screen and (max-width: 570px) {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   .experience-content,
