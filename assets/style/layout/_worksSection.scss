@@ -1,0 +1,292 @@
+#homepage-container {
+  .works-container {
+    position: absolute;
+    height: 100%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 $space-small2;
+    top: 0;
+    left: 0;
+
+    h3 {
+      font-size: $font-size160;
+      text-align: center;
+    }
+  }
+
+  .works-title {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .works-title-slide-show {
+    animation: worksTitleSlideShow 4s ease-out 1.5s forwards;
+    
+    @keyframes worksTitleSlideShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .projects-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .gallery-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .projects-wrapper {
+    height: 70%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-small2;
+    flex: none;
+  }
+
+  .website1,
+  .website2,
+  .website3 {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .website1-show {
+    animation: websiteShow 5s ease-in-out 1.5s forwards;
+    
+    @keyframes websiteShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .website2-show {
+    animation: websiteShow 5s ease-in-out 2s forwards;
+  }
+
+  .website3-show {
+    animation: websiteShow 5s ease-in-out 2.5s forwards;
+  }
+
+  .project-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: $bg-light-dark;
+    border: 1px solid $bg-accent;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 80%;
+      background: $bg-light;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: all 0.5s ease-in-out;
+      z-index: 5;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: $bg-accent;
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:hover {
+      border: 1px solid $bg-light;
+    }
+
+    &:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    &:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:hover .project-title {
+      top: 50%;
+      transform: translate(-50%, -120%);
+    }
+
+    &:hover .project-subtitle {
+      bottom: 50%;
+      transform: translate(-50%, 120%);
+    }
+  }
+
+  .project-title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transition: all 0.5s ease-in-out;
+    z-index: 5;
+  }
+
+  .project-subtitle {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: all 0.5s ease-in-out;
+    z-index: 5;
+  }
+
+  .inprogess-title {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .underline-content {
+    position: absolute;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .underline-top {
+    top: 20px;
+  }
+
+  .underline-high-full-width {
+    animation: underlineFullWidth 4.5s ease-out .5s forwards;
+    
+    @keyframes underlineFullWidth {
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .underline-bottom {
+    bottom: 20px;
+  }
+
+  .underline-low-full-width {
+    animation: underlineFullWidth 4.5s ease-out forwards;
+  }
+
+  .chevron-slider {
+    position: absolute;
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $bg-dark;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 $space-tiny1;
+    z-index: 10;
+  }
+
+  .fa-chevron-left,
+  .fa-chevron-right {
+    font-size: $font-size24;
+    color: $color-accent;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  .chevron-show {
+    animation: chevronShow 1s ease-in-out 1.5s forwards;
+
+    @keyframes chevronShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .underline {
+    height: 1px;
+    width: 100%;
+    background: $bg-accent;
+    transform: translateX(-100%);
+  }
+
+  .scroll-dot-container {
+    position: absolute;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  .scroll-dot {
+    height: 10px;
+    width: 40px;
+    background: $bg-light-dark;
+    border: 1px solid $bg-accent;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .scroll-dot.active {
+    background: $bg-accent;
+  }
+  
+  .scroll-dot-show {
+    animation: scrollDotShow 3s ease-in-out .5s forwards;
+    
+    @keyframes scrollDotShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      } 
+    }
+  }
+}

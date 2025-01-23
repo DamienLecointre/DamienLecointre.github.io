@@ -1,0 +1,240 @@
+#homepage-container {
+
+  nav {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .copyright {
+    font-size: .7rem;
+    position: absolute;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    bottom: 0;
+    left: -40px;
+    text-wrap: nowrap;
+    @extend %item-hidden;
+    animation: PortfoliotextShow 3s ease-in-out 14s forwards;
+
+    @media only screen and (max-width: 960px) {
+      writing-mode: horizontal-tb;
+      transform: rotate(0deg);
+      left: 0;
+      top: -2px;
+      text-wrap: wrap;
+    }
+
+    @media only screen and (max-width: 550px) {
+      font-size: $font-size09;
+    }
+  }
+  
+  .fa-copyright {
+    font-size: $font-size09;
+    transform: rotate(90deg);
+
+    @media only screen and (max-width: 960px) {
+      font-size: .5rem;
+      transform: rotate(0deg);
+    }
+  }
+  
+  .line-container {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: -15px;
+    overflow: hidden;
+
+    @media only screen and (max-width: 960px) {
+      height: fit-content;
+      width: 100%;
+      left: 0;
+    }
+  }
+  
+  .line {
+    height: 100%;
+    width: 1px;
+    background: $bg-accent;
+    transform: translateY(100%);
+    animation: lineAppear 2s ease-in-out 13s forwards;
+
+    @media only screen and (max-width: 960px) {
+      height: 1px;
+      width: 100%;
+      transform: translate(-100%, 0);
+    }
+  
+    @keyframes lineAppear {
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  .line.skip-line-animation {
+    animation: skipLineAppear 2s ease-in-out forwards;
+  
+    @keyframes skipLineAppear {
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  .social-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @extend %item-hidden;
+    animation: PortfoliotextShow 3s ease-in-out 14s forwards;
+    overflow: hidden;
+
+    @media only screen and (max-width: 960px) {
+      display: none;
+    }
+  }
+  
+  .social-content {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: $space-small2;
+    overflow: hidden;  
+  }
+  
+  .social-icons {
+    width: fit-content;
+    background: $bg-dark;
+    cursor: pointer;
+  
+    &:hover .icon-slide-up {
+      transform: translateY(0);
+    }
+  
+    &:hover .icon-slide-top {
+      transform: translateY(-150%);
+    }
+  
+    &:hover .text-show {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    &:hover .text-show::after {
+      transform: scale(1);
+    }
+  }
+  
+  i {
+    font-size: $font-size19;
+    color: $color-light;
+  }
+  
+  .icon-slide-up {
+    position: absolute;
+    transform: translateY(200%);
+    color: $color-accent;
+    @extend %transition-speed-all;
+  }
+  
+  .icon-slide-top {
+    transform: translateY(0);
+    @extend %transition-speed-all;
+  }
+  
+  .text-show {
+    position: absolute;
+    font-size: $font-size12;
+    font-weight: $font-weight300;
+    color: $color-light;
+    letter-spacing: .15rem;
+    text-wrap: nowrap;
+    top: 0;
+    left: 25px;
+    @extend %item-hidden;
+    @extend %transition-medium-all;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $bg-accent;
+      left: 0;
+      bottom: -1px;
+      transform: scale(0);
+      @extend %transition-slow-all;
+    }
+  }
+
+  ul {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .nav-container {
+    align-items: flex-start;
+    @extend %item-hidden;
+    animation: PortfoliotextShow 3s ease-in-out 14s forwards;
+
+    @media only screen and (max-width: 960px) {
+      display: none;
+    }
+  
+    li {
+      position: relative;
+      font-size: $font-size19;
+      font-weight: $font-weight400;
+      color: $color-light;
+      letter-spacing: .15rem;
+      padding-top: $space-small1;
+      user-select: none;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 0;
+        background: $bg-accent;
+        bottom: 0;
+        left: 0;
+        @extend %transition-medium-all;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .navLink-visited {
+    animation: navLinkVisited .8s ease-out forwards;
+
+    @keyframes navLinkVisited {
+      to {
+        color: $color-accent;
+      }
+    }
+  }
+
+  .skip-text-animation {
+    animation: skipTextShow 3s ease-in-out 0s forwards;
+
+    @keyframes skipTextShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      } 
+    }
+  }
+}
+

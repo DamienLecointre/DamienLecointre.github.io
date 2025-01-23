@@ -1,0 +1,617 @@
+#homepage-container  {
+
+  .resume-container {
+    position: absolute;
+    height: 100%;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    bottom: 0;
+    transform: translateY(0);
+    z-index: 500;
+
+    @media only screen and (max-width: 960px) {
+      width: 100%;
+    }
+
+    h3 {
+      // font-size: $font-size192;
+      font-size: clamp(7rem, 5.182rem + 9.09vw, 12rem);
+      text-align: center;
+
+      @media only screen and (max-width: 1460px) {
+        font-size: clamp(7rem, 5rem + 6vw, 12rem);
+      }
+
+      @media only screen and (max-width: 1180px) {
+        font-size: clamp(7rem, 5rem + 4vw, 12rem);
+      }
+
+      @media only screen and (max-width: 960px) {
+        padding-top: 4em;
+      }
+
+      @media only screen and (max-width: 710px) {
+        writing-mode: sideways-lr;
+        padding-top: 30px;
+      }
+    }
+
+    h4:not(.title-section, .title-tab) {
+      font-size: $font-size16;
+      position: relative;
+      text-align: center;
+    }
+  }
+
+  .resume-container-slide-up {
+    animation: resumeContainerSlideUp 8s ease-out forwards;
+
+    @keyframes resumeContainerSlideUp {
+      to {
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .title-section {
+    position: relative;
+    text-align: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $color-accent;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .title-section1,
+  .title-section2 {
+    @media only screen and (max-width: 1520px) {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .title-section3 {
+
+    @media only screen and (max-width: 710px) {
+      display: none;
+    }
+  }
+
+  .tab-container {
+    position: relative;
+    display: none;
+    height: 90%;
+    width: 100%;
+
+    @media only screen and (max-width: 1520px) {
+      display: block;
+    }
+
+    @media only screen and (max-width: 960px) {
+      height: 61%;
+      padding-top: 9em;
+    }
+  }
+
+  .tab-experience {
+    display: none;
+    height: 100%;
+    padding-top: 0;
+
+    @media only screen and (max-width: 710px) {
+      display: block;
+    }
+  }
+
+  .tab-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    @extend %transition-medium-all;
+
+    i {
+      position: absolute;
+      font-size: 1.5rem;
+      color: $color-accent;
+      opacity: 1;
+      visibility: visible;
+      right: 10px;
+      bottom: 0;
+      cursor: pointer;
+      @extend %transition-speed-all;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .tab-chevron3 {
+    transform: scale(1) rotate(180deg);
+
+    &:hover {
+      transform: scale(1.2) rotate(180deg);
+    }
+  }
+
+  .chevron-rotate {
+    animation: chevronRotate .5s ease-in-out forwards;
+
+    @keyframes chevronRotate {
+      to {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .title-tab {
+    position: absolute;
+    writing-mode: sideways-lr;
+    top: 0;
+    right: 0;
+    padding: 0 $space-tiny1;
+  }
+
+  .tab-underline {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: $color-accent;
+    top: 0;
+    right: 0;
+  }
+
+  .skills-wrapper-responsive {
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    padding-right: $space-small2;
+    @extend %transition-medium-all;
+
+    @media only screen and (max-width: 960px) {
+      height: 157%;
+    }
+  }
+
+  .skills-wrapper-responsive-show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .resume-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 20% 40% 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    @extend %transition-medium-all;
+
+    @media only screen and (max-width: 1520px) {
+      grid-template-columns: 8% 8% 1fr;
+    }
+    
+    @media only screen and (max-width: 630px) {
+      grid-template-columns: 10% 10% 1fr;
+    }
+  }
+
+  .competence-show {
+    grid-template-columns: 25% 8% 1fr;
+  }
+
+  .skills-container {
+    height: 98%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .skills-wrapper,
+  .skills-wrapper-responsive {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .skills-wrapper {
+    height: 100%;
+    padding-top: $space-small2;
+
+    @media only screen and (max-width: 1520px) {
+      display: none;
+    }
+  }
+
+  .skills-content {
+    height: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .logo-container {
+    width: 15px;
+    @extend %flex-center;
+
+    i {
+      height: 100%;
+      color: $color-accent;
+    }
+
+    svg {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  .skill-cursor {
+    height: 100%;
+    width: 150px;
+    border: 1px solid $bg-light-dark; 
+    border-radius: 2px;
+    padding: 3px;
+    overflow: hidden;
+  }
+
+  .skill-level {
+    height: 100%;
+    background: $bg-accent;
+  }
+
+  .html-level,
+  .css-level,
+  .scss-level {
+    width: 85%;
+    transform: translateX(-100%);
+  }
+
+  .js-level,
+  .git-level,
+  .github-level {
+    width: 70%;
+    transform: translateX(-100%);
+  }
+
+  .node-level,
+  .react-level {
+    width: 60%;
+    transform: translateX(-100%);
+  }
+
+  .psd-level,
+  .ai-level,
+  .id-level {
+    width: 90%;
+    transform: translateX(-100%);
+  }
+
+  .date-content {
+    position: relative;
+    padding-right: $space-small1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background: $bg-accent;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .date-color-accent {
+    color: $color-accent;
+  }
+
+  .formation-container {
+    height: 98%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 $space-small2;
+
+    @media only screen and (max-width: 1520px) {
+      padding: 0;
+    }
+  }
+
+  .formations-show {
+    grid-template-columns: 8% 45% 1fr;
+  }
+
+  .formation-wrapper-responsive {
+    display: none;
+    max-height: 495px;
+    opacity: 0;
+    visibility: hidden;
+    @extend %transition-medium-all;
+    overflow-y: scroll;
+    padding-left: 2em;
+    margin-right: 2.2em;
+
+    @media only screen and (max-width: 960px) {
+      max-height: 395px;
+    }
+  }
+
+  .formation-wrapper-responsive-show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .formation-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media only screen and (max-width: 1520px) {
+      display: none;
+    }
+  }
+
+  .formation-content {
+    width: 100%;
+    display: flex;
+    padding-top: $space-small2;
+  }
+
+  .experience-container {
+    height: 98%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+      text-align: justify;
+    }
+
+    p:not(.title-paragraph) {
+      padding-top: $space-tiny1;
+    }
+
+    @media only screen and (max-width: 1520px) {
+      justify-content: space-between;
+      max-height: 495px;
+      padding: 0 2em;
+      overflow-y: scroll;
+    }
+
+    @media only screen and (max-width: 960px) {
+      margin-top: 9em;
+      max-height: 395px;
+    }
+
+    @media only screen and (max-width: 710px) {
+      overflow-y: visible;
+      padding: 0 0 0 2em;
+    }
+  }
+
+  .experience-wrapper-responsive {
+    position: relative;
+    max-height: 395px;
+    overflow-y: scroll;
+    padding-right: 1em;
+    margin-right: 3em;
+    z-index: 500;
+  }
+
+  .experience-content,
+  .experience-content-responsive {
+    display: flex;
+  }
+
+  .experience-content {
+
+    @media only screen and (max-width: 960px) {
+      margin: 1em 0;
+    }
+
+    @media only screen and (max-width: 710px) {
+      display: none;
+    }
+  }
+
+  .experience-content-responsive {
+    display: none;
+
+    @media only screen and (max-width: 710px) {
+      display: flex;
+    }
+  }
+
+  .experience-content:nth-of-type(1) {
+    padding-top: $space-small2;
+    padding-bottom: $space-small1;
+  }
+
+  .text-content {
+    padding-left: $space-small1;
+
+    p {
+      font-size: $font-size16;
+    }
+  }
+
+  .title-paragraph {
+    width: fit-content;
+    position: relative;
+    text-transform: uppercase;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $color-accent;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .resume-title,
+  .skills-container,
+  .formation-container,
+  .experience-container,
+  .resume-arrow {
+    @extend %item-hidden;
+    transform: translateY(100vh);
+  }
+
+  .resume-title-slide-up {
+    animation: resumeTextsSlideUp 5s ease-out forwards;
+
+    @keyframes resumeTextsSlideUp {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100vh);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .resume-title-slide-up2 {
+    animation: resumeTextsSlideUp2 12s ease-out forwards;
+
+    @keyframes resumeTextsSlideUp2 {
+      0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .skills-container-slide-up {
+    animation: resumeTextsSlideUp 3s ease-out 1s forwards;
+  }
+
+  .skills-container-slide-up2 {
+    animation: resumeTextsSlideUp2 5s ease-out forwards;
+
+    @keyframes resumeTextsSlideUp2 {
+      0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .skill-level-full-width {
+    animation: skillLevelFullWidth 2.5s ease-out 5s forwards;
+
+    @keyframes skillLevelFullWidth {
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .formation-container-slide-up {
+    animation: resumeTextsSlideUp 3.5s ease-out 1.5s forwards;
+  }
+
+  .formation-container-slide-up2 {
+    animation: resumeTextsSlideUp2 5.5s ease-out forwards;
+  }
+
+  .experience-container-slide-up {
+    animation: resumeTextsSlideUp 3s ease-out 2s forwards;
+  }
+
+  .experience-container-slide-up2 {
+    animation: resumeTextsSlideUp2 6s ease-out forwards;
+  }
+
+  .resume-arrow-slide-up {
+    animation: resumeTitleSlideUp 2.5s ease-out forwards;
+
+    @keyframes resumeTitleSlideUp {
+      0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100vh);
+      }
+      20% {
+        opacity: 1;
+        visibility: visible;
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .tab-hidden {
+    animation: tabHidden 1s ease-out forwards;
+
+    @keyframes tabHidden {
+      98% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+      }
+    }
+  }
+
+  .partition-hidden {
+    animation: partitionHidden .2s ease-out forwards;
+
+    @keyframes partitionHidden {
+      98% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,437 @@
+#intro-container {
+
+  .container {
+    position: relative;
+    @extend %item-visible;
+    animation: introContainerHidden 5s ease-in-out 8s forwards;
+
+    @keyframes introContainerHidden {
+      0% {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+      80% {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+      }
+    }
+  }
+
+  .container.intro-hidden {
+    @extend %item-hidden;
+    display: none;
+    transition: all .5s ease-in-out;
+  }
+
+  .btn-container {
+    position: absolute;
+    @extend %full-viewport;
+    z-index: 500;
+  }
+
+  button {
+    display: block;
+    position: relative;
+    outline: none;
+    font-family: $font-primary;
+    font-size: $font-size19;
+    font-weight: $font-weight400;
+    color: $color-light-dark;
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+    padding-top: $space-small1;
+    margin: 0 auto;
+    animation: skipButtonShow 5s ease-in-out forwards;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $bg-light-dark;
+      left: 0;
+      bottom: 0;
+      transform: scale(0);
+      transition: all .5s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @keyframes skipButtonShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @media only screen and (max-width: 420px) {
+      font-size: $font-size16;
+    }
+  }
+
+  .intro-container {
+    @extend %full-viewport;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0% 100%;
+    animation: loading 8s ease-out forwards;
+
+    @keyframes loading {
+      25% {
+        grid-template-columns: 20% 80%;
+      }
+      35% {
+        grid-template-columns: 20% 80%;
+      }
+      50% {
+        grid-template-columns: 40% 60%;
+      }
+      60% {
+        grid-template-columns: 40% 60%;
+      }
+      75% {
+        grid-template-columns: 60% 40%;
+      }
+      85% {
+        grid-template-columns: 60% 40%;
+      }
+      100% {
+        grid-template-columns: 100% 0;
+      }  
+    }
+    
+    @media only screen and (max-width: 960px) {
+      grid-template-rows: 100% 0;
+      grid-template-columns: 1fr;
+      animation: loadingMobile 8s ease-out forwards;
+
+      @keyframes loadingMobile {
+        25% {
+          grid-template-rows: 80% 20%;
+        }
+        35% {
+          grid-template-rows: 80% 20%;
+        }
+        50% {
+          grid-template-rows: 60% 40%;
+        }
+        60% {
+          grid-template-rows: 60% 40%;
+        }
+        75% {
+          grid-template-rows: 40% 60%;
+        }
+        85% {
+          grid-template-rows: 40% 60%;
+        }
+        100% {
+          grid-template-rows: 0 100%;
+        }  
+      }
+    }
+  }
+
+  .loading-container {
+    background: $bg-dark;
+
+    @media only screen and (max-width: 960px) {
+      grid-row: 2 / 3;
+    }
+
+    .text-wrapper {
+      position: relative;
+      @extend %full-viewport;
+      @extend %flex-end;
+
+      @media only screen and (max-width: 960px) {
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+  }
+
+  .loading-wrapper {
+    display: flex;
+    align-items: baseline;
+    @extend %item-visible;
+    animation: loadingHidden 8s ease-out .1s forwards;
+    
+    @keyframes loadingHidden {
+      0% {
+        opacity: 1;
+        visibility: visible;
+      }
+      95% {
+        opacity: 1;
+        visibility: visible;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+      }  
+    }
+  }
+
+  .dot-container {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px 2px rgba(255,111,40,0.8);
+    background: #ff7028d3;
+    animation: zoom-in-out 2s ease-in-out infinite;
+
+    @keyframes zoom-in-out {
+      50% {
+        transform: scale(1.6);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .loading {
+    text-transform: uppercase;
+    padding-left: $space-tiny2;
+    padding-right: $space-small2;
+
+    @media only screen and (max-width: 960px) {
+      padding: $space-small2 $space-tiny2 0 ;
+    }
+
+    @media only screen and (max-width: 420px) {
+      font-size: $font-size12;
+    }
+  }
+
+  .quote-container {
+    position: absolute;
+    @extend %full-viewport;
+    @extend %flex-center;
+    flex-direction: column;
+    @extend %item-hidden;
+    transform: scale(0);
+    animation: quoteShow 8s ease-in .8s forwards;
+
+    @keyframes quoteShow {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0);
+      }
+      80% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }  
+    }
+
+    h4 {
+      font-size: $font-size19;
+      font-weight: $font-weight500;
+      line-height: 45px;
+      color: $color-light-dark;
+      text-align: center;
+
+      @media only screen and (max-width: 420px) {
+        font-size: $font-size12;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .quote-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 $space-small2;
+
+    i {
+      color: $color-accent;
+    }
+
+    h4 {
+      font-weight: $font-weight300;
+      font-style: italic;
+      padding: 0 $space-tiny1;
+    }
+  }
+
+  .fa-quote-left {
+    padding-right: $space-tiny1;
+  }
+  .fa-quote-right {
+    padding-left: $space-tiny1;
+  }
+
+  .text-container {
+    position: relative;
+    @extend %full-viewport;
+    display: flex;
+    align-items: center;
+    background: $bg-light;
+    padding-left: $space-small2;
+
+    @media only screen and (max-width: 960px) {
+      justify-content: center;
+      padding-left: 0;
+    }
+
+    .text-wrapper {
+      position: absolute;
+      @extend %flex-center;
+      top: 50%;
+      transform: translateY(-50%);
+      overflow: hidden;
+    }
+  }
+
+  .name-container {
+    @extend %item-hidden;
+    animation: nameHidden 4.5s ease-in-out 1s forwards;
+
+    @keyframes nameHidden {
+      0% {
+        opacity: 1;
+        visibility: visible;
+      }
+      35% {
+        opacity: 1;
+        visibility: visible;
+      }
+      60% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      65% {
+        display: none;
+      }
+      100% {
+        display: none;
+      } 
+    }
+  }
+
+  .job-container {
+    @extend %item-hidden;
+    animation: jobHidden 4s ease-in-out 3.2s forwards;
+
+    @keyframes jobHidden {
+      0% {
+        opacity: 1;
+        visibility: visible;
+      }
+      35% {
+        opacity: 1;
+        visibility: visible;
+      }
+      60% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      65% {
+        display: none;
+      }
+      100% {
+        display: none;
+      } 
+    }
+  }
+
+  .welcome-container {
+    @extend %item-hidden;
+    animation: welcomeHidden 5.5s ease-in-out 4s forwards;
+
+    @keyframes welcomeHidden {
+      0% {
+        opacity: 1;
+        visibility: visible;
+      }
+      35% {
+        opacity: 1;
+        visibility: visible;
+      }
+      60% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      65% {
+        display: none;
+      } 
+    }
+  }
+
+  .intro1,
+  .intro2 {
+    text-wrap: nowrap;
+
+    @media only screen and (max-width: 420px) {
+      font-size: $font-size12;
+    }
+  }
+
+  .intro1 {
+    color: $color-dark;
+    padding-right: $space-tiny2;
+    transform: translateY(100%);
+  }
+
+  .intro2 {
+    color: $color-accent;
+    transform: translateY(100%);
+  }
+
+  .intro-show1 {
+    animation: introShow 3s ease-in-out 1s forwards;
+  }
+
+  .intro-show2 {
+    animation: introShow 3s ease-in-out 1.5s forwards;
+  }
+
+  .intro-show3 {
+    animation: introShow 3s ease-in-out 3s forwards;
+  }
+
+  .intro-show4 {
+    animation: introShow 3s ease-in-out 3.5s forwards;
+  }
+
+  .intro-show5 {
+    animation: introShow 3s ease-in-out 5s forwards;
+  }
+
+  .intro-show6 {
+    animation: introShow 3s ease-in-out 5.5s forwards;
+  }
+
+  @keyframes introShow {
+    30% {
+      transform: translateY(0);
+    }
+    80% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+}

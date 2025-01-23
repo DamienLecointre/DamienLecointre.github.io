@@ -1,0 +1,50 @@
+%full-viewport {
+  height: 100%;
+  width: 100%;
+}
+
+%flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%item-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+%item-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+%transition-speed-all {
+  transition: all .3s ease-in-out;
+}
+
+%transition-speed-start {
+  transition: all .3s ease-in;
+}
+
+%transition-medium-all {
+  transition: all .5s ease-in-out;
+}
+
+%transition-medium-start {
+  transition: all .5s ease-in;
+}
+
+%transition-slow-all {
+  transition: all .7s ease-in-out;
+}
+
+%transition-slow-start {
+  transition: all .7s ease-in;
+}

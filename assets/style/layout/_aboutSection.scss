@@ -1,0 +1,207 @@
+#homepage-container {
+
+  .about-container {
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+    transition: all 3s ease-in;
+    z-index: 800;
+
+    @media only screen and (max-width: 960px) {
+      width: 100%;
+    }
+
+    .text-container {
+      position: absolute;
+      top: 0;
+      @extend %item-visible;
+      padding-left: 35%;
+      transform: translateY(100vh);
+      z-index: 500;
+      overflow: hidden;
+      overflow-y: scroll;
+
+      p:not(:nth-child(1)) {
+        text-align: justify;
+        padding-top: 1em;
+      }
+
+      i {
+        font-size: $font-size16;
+        color: $color-accent;
+        padding: 0 $space-small1;
+      }
+
+      @media only screen and (max-width: 1345px) {
+        padding-left: 20%;
+      }
+
+      @media only screen and (max-width: 960px) {
+        padding: 4.5em 1em 0;
+      }
+
+      @media only screen and (max-width: 680px) {
+        max-height: 78%;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, transparent 0em, transparent 3.5em, #ff6f28 3.5em, transparent 100%);
+  }
+
+  .about-container-slide-up {
+    transform: translateY(-100vh);
+  }
+
+  .text-container-slide-up {
+    animation: textContainerSlideDown 4s ease-out forwards;
+
+    @keyframes textContainerSlideDown {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100vh);
+      }
+      30% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20vh);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .text-container-slide-up2 {
+    animation: textContainerSlideUp2 4s ease-in forwards;
+
+    @keyframes textContainerSlideUp2 {
+      0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-60vh);
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .about-title {
+    @extend %item-hidden;
+    padding-bottom: $space-small-tiny;
+    transform: translateY(100vh);
+    text-wrap: nowrap;
+
+    @media only screen and (max-width: 960px) {
+      padding-bottom: 0.6em;
+    }
+
+    @media only screen and (max-width: 870px) {
+      padding-bottom: .8em;
+    }
+
+    @media only screen and (max-width: 600px) {
+      padding-bottom: 1em;
+    }
+
+    @media only screen and (max-width: 500px) {
+      font-size: 6rem;
+      height: 100%;
+      text-align: end;
+      writing-mode: sideways-lr;
+      padding-top: .6em;
+      padding-bottom: 0;
+    }
+  }
+
+  .about-title-slide-up {
+    animation: aboutTitleSlideUp 4s ease-out forwards;
+
+    @keyframes aboutTitleSlideUp {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100vh);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .about-title-slide-up2 {
+    animation: aboutTitleSlideUp2 3s ease-in forwards;
+
+    @keyframes aboutTitleSlideUp2 {
+      0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-60vh);
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .about-arrow {
+    @extend %item-hidden;
+    transform: translate(0, 100vh);
+
+    @media only screen and (max-width: 480px) {
+      margin-left: -7%;
+    }
+  }
+
+  .about-arrow-slide-up {
+    animation: aboutArrowSlideUp 3.5s ease-out forwards;
+
+    @keyframes aboutArrowSlideUp {
+      0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 100vh);
+      }
+      20% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
