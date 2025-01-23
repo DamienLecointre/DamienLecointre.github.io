@@ -212,34 +212,48 @@ resumeLink.addEventListener("click", () => {
 
 // SLIDERS RESUME SECTION
 
-const titleTab1 = document.querySelector(".title-tab1");
-const titleTab2 = document.querySelector(".title-tab2");
-const titleTab3 = document.querySelector(".title-tab3");
+// const titleTab1 = document.querySelector(".title-tab1");
+// const titleTab2 = document.querySelector(".title-tab2");
+// const titleTab3 = document.querySelector(".title-tab3");
+// const skillsContainer
+// const formationContainer
+// const experienceContainer
+const tabSkills = document.querySelector(".tab-skills");
+const tabFormations = document.querySelector(".tab-formations");
+const tabExperience = document.querySelector(".tab-experience");
 const tabChevron1 = document.querySelector(".tab-chevron1");
 const tabChevron2 = document.querySelector(".tab-chevron2");
-const tabContainer = document.querySelector(".tab-container");
-const experienceContent1 = document.querySelector(".experience-content1");
-const experienceContent2 = document.querySelector(".experience-content2");
+const tabChevron3 = document.querySelector(".tab-chevron3");
+// const tabContainer = document.querySelector(".tab-container");
+// const experienceContent1 = document.querySelector(".experience-content1");
+// const experienceContent2 = document.querySelector(".experience-content2");
 const skillsWrapperResponsive = document.querySelector(
   ".skills-wrapper-responsive"
 );
 const formationWrapperResponsive = document.querySelector(
   ".formation-wrapper-responsive"
 );
-
-console.log(titleTab1);
+const experienceWrapperResponsive = document.querySelector(
+  ".experience-wrapper-responsive"
+);
 
 tabChevron1.addEventListener("click", () => {
-  resumeWrapper.classList.toggle("competence-show");
-  titleTab1.classList.toggle("title-tab-hidden");
+  resumeWrapper.classList.toggle("resume-full-width");
+  formationContainer.classList.toggle("formations-container-hidden");
+  experienceContainer.classList.toggle("experience-container-hidden");
   tabChevron1.classList.toggle("chevron-rotate");
+  tabChevron2.classList.toggle("tab-chevron2-hidden");
+  tabChevron3.classList.toggle("tab-chevron3-hidden");
   skillsWrapperResponsive.classList.toggle("skills-wrapper-responsive-show");
 });
 
 tabChevron2.addEventListener("click", () => {
-  resumeWrapper.classList.toggle("formations-show");
-  titleTab2.classList.toggle("title-tab-hidden");
+  resumeWrapper.classList.toggle("resume-full-width");
+  skillsContainer.classList.toggle("skills-container-hidden");
+  experienceContainer.classList.toggle("experience-container-hidden");
+  tabChevron1.classList.toggle("tab-chevron1-hidden");
   tabChevron2.classList.toggle("chevron-rotate");
+  tabChevron3.classList.toggle("tab-chevron3-hidden");
   formationWrapperResponsive.classList.toggle(
     "formation-wrapper-responsive-show"
   );
