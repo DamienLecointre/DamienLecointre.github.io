@@ -42,11 +42,12 @@
       }
 
       @media only screen and (max-width: 960px) {
-        padding: 4.5em 1em 0;
+        padding: 0 1em;
+        margin-top: 4.5em;
       }
 
       @media only screen and (max-width: 680px) {
-        max-height: 78%;
+        max-height: 70%;
       }
     }
   }
@@ -122,8 +123,8 @@
     }
 
     @media only screen and (max-width: 570px) {
-      font-size: 12rem;
-      padding-bottom: 0.4em;
+      font-size: 6rem;
+      padding-bottom: 1em;
     }
   }
 

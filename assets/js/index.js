@@ -212,12 +212,9 @@ resumeLink.addEventListener("click", () => {
 
 // SLIDERS RESUME SECTION
 
-// const titleTab1 = document.querySelector(".title-tab1");
-// const titleTab2 = document.querySelector(".title-tab2");
-// const titleTab3 = document.querySelector(".title-tab3");
-// const skillsContainer
-// const formationContainer
-// const experienceContainer
+const titleTab1 = document.querySelector(".title-tab1");
+const titleTab2 = document.querySelector(".title-tab2");
+const titleTab3 = document.querySelector(".title-tab3");
 const tabSkills = document.querySelector(".tab-skills");
 const tabFormations = document.querySelector(".tab-formations");
 const tabExperience = document.querySelector(".tab-experience");
@@ -241,6 +238,7 @@ tabChevron1.addEventListener("click", () => {
   resumeWrapper.classList.toggle("resume-full-width");
   formationContainer.classList.toggle("formations-container-hidden");
   experienceContainer.classList.toggle("experience-container-hidden");
+  titleTab1.classList.toggle("title-tab-hidden");
   tabChevron1.classList.toggle("chevron-rotate");
   tabChevron2.classList.toggle("tab-chevron2-hidden");
   tabChevron3.classList.toggle("tab-chevron3-hidden");
@@ -251,11 +249,25 @@ tabChevron2.addEventListener("click", () => {
   resumeWrapper.classList.toggle("resume-full-width");
   skillsContainer.classList.toggle("skills-container-hidden");
   experienceContainer.classList.toggle("experience-container-hidden");
+  titleTab2.classList.toggle("title-tab-hidden");
   tabChevron1.classList.toggle("tab-chevron1-hidden");
   tabChevron2.classList.toggle("chevron-rotate");
   tabChevron3.classList.toggle("tab-chevron3-hidden");
   formationWrapperResponsive.classList.toggle(
     "formation-wrapper-responsive-show"
+  );
+});
+
+tabChevron3.addEventListener("click", () => {
+  resumeWrapper.classList.toggle("resume-full-width");
+  skillsContainer.classList.toggle("skills-container-hidden");
+  formationContainer.classList.toggle("formations-container-hidden");
+  titleTab3.classList.toggle("title-tab-hidden");
+  tabChevron1.classList.toggle("tab-chevron2-hidden");
+  tabChevron2.classList.toggle("tab-chevron2-hidden");
+  tabChevron3.classList.toggle("chevron-rotate");
+  experienceWrapperResponsive.classList.toggle(
+    "experience-wrapper-responsive-show"
   );
 });
 
