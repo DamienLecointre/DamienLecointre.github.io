@@ -10,9 +10,31 @@
     top: 0;
     left: 0;
 
+    @media only screen and (max-width: 960px) {
+      height: 80%;
+      width: 100%;
+      bottom: 0;
+      top: unset;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: 740px) {
+      bottom: -6%;
+    }
+
     h3 {
-      font-size: $font-size160;
+      // font-size: $font-size160;
+      font-size: clamp(7rem, 5.182rem + 9.09vw, 10rem);
       text-align: center;
+
+      @media only screen and (max-width: 1290px) {
+        font-size: clamp(7rem, 5rem + 4vw, 10rem);
+      }
+
+      @media only screen and (max-width: 740px) {
+        width: 100%;
+        text-align: start;
+      }
     }
   }
 
@@ -39,6 +61,10 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+
+    @media only screen and (max-width: 960px) {
+      height: 60%;
+    }
   }
 
   .gallery-wrapper {
@@ -47,6 +73,14 @@
     display: flex;
     align-items: center;
     transition: transform 0.5s ease-in-out;
+
+    @media only screen and (max-width: 1290px) {
+      max-height: 80%;
+    }
+
+    @media only screen and (max-width: 960px) {
+      max-height: 100%;
+    }
   }
 
   .projects-wrapper {
@@ -57,6 +91,16 @@
     grid-template-columns: repeat(3, 1fr);
     gap: $space-small2;
     flex: none;
+    padding: 0 1em;
+
+    @media only screen and (max-width: 740px) {
+      gap: $space-small1;
+      overflow-x: scroll;
+    }
+  }
+
+  .projects-wrapper::-webkit-scrollbar {
+    display: block;
   }
 
   .website1,
@@ -94,6 +138,10 @@
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
+
+    @media only screen and (max-width: 740px) {
+      width: 250px;
+    }
 
     img {
       width: 100%;
@@ -219,6 +267,14 @@
     transform: translateX(-50%);
     padding: 0 $space-tiny1;
     z-index: 10;
+
+    @media only screen and (max-width: 1290px) {
+      width: 11%;
+    }
+
+    @media only screen and (max-width: 740px) {
+      display: none;
+    }
   }
 
   .fa-chevron-left,
@@ -256,7 +312,7 @@
 
   .scroll-dot-container {
     position: absolute;
-    width: 3%;
+    width: 4%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -264,6 +320,10 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+
+    @media only screen and (max-width: 740px) {
+      display: none;
+    }
   }
 
   .scroll-dot {

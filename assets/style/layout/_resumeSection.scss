@@ -34,15 +34,6 @@
         font-size: clamp(7rem, 5rem + 6vw, 12rem);
         bottom: 10%;
       }
-
-      // @media only screen and (max-width: 710px) {
-      //   padding-top: 55px;
-      // }
-
-      // @media only screen and (max-width: 570px) {
-      //   font-size: 12rem;
-      //   padding-top: 80px;
-      // }
     }
 
     h4:not(.title-section, .title-tab) {
@@ -99,7 +90,7 @@
     flex-direction: column;
 
     @media only screen and (max-width: 960px) {
-      max-height: 70%;
+      max-height: 65%;
       margin-top: 9em;
     }
   }
@@ -384,7 +375,7 @@
     }
 
     @media only screen and (max-width: 960px) {
-      max-height: 70%;
+      max-height: 65%;
       margin-top: 9em;
     }
   }
@@ -501,18 +492,9 @@
     }
 
     @media only screen and (max-width: 960px) {
-      max-height: 70%;
+      max-height: 65%;
       margin-top: 9em;
     }
-
-    // @media only screen and (max-width: 710px) {
-    //   overflow-y: visible;
-    //   padding: 0 0 0 2em;
-    // }
-
-    // @media only screen and (max-width: 570px) {
-    //   margin-top: 5.1em;
-    // }
   }
 
   .experience-container-hidden {
@@ -579,30 +561,6 @@
       margin-bottom: 1em;
     }
   }
-
-  // .experience-content {
-
-  //   @media only screen and (max-width: 960px) {
-  //     margin: 1em 0;
-  //   }
-
-  //   @media only screen and (max-width: 710px) {
-  //     display: none;
-  //   }
-  // }
-
-  // .experience-content-responsive {
-  //   display: none;
-
-  //   @media only screen and (max-width: 710px) {
-  //     display: flex;
-  //   }
-  // }
-
-  // .experience-content:nth-of-type(1) {
-  //   padding-top: $space-small2;
-  //   padding-bottom: $space-small1;
-  // }
 
   .text-content {
     padding-left: $space-small1;

@@ -2,14 +2,13 @@
 
 const skipBtn = document.querySelector(".skip-btn");
 const introContainer = document.querySelector(".container");
-// const portfolioContainer = document.querySelector(".portfolio-container");
 const copyright = document.querySelector(".copyright");
 const navLine = document.querySelector(".line");
 const underlineMobile = document.querySelector(".underline-mobile");
 const socialContainer = document.querySelector(".social-container");
 const navContainer = document.querySelector(".nav-container");
 
-// SKIP PORTFOLIO CONSTANTS
+// PORTFOLIO CONSTANTS
 
 const portfolioContainer = document.querySelector(".portfolio-container");
 const portfolioTitle = document.querySelector(".portfolio-title");
@@ -17,9 +16,7 @@ const portfolioSubtitle = document.querySelector(".subtitle-portfolio");
 const portfolioArrow = document.querySelector(".portfolio-arrow");
 const portfolioArrowCircle = document.querySelector(".portfolio-arrow-circle");
 const portfolioChevron = document.querySelector(".portfolio-chevron");
-// const aboutTextContainer = document.querySelector(".about-text-container");
-// const aboutTitle = document.querySelector(".about-title");
-// const aboutLink = document.querySelector(".about-link");
+let isFirstVisit = true;
 
 // ABOUT CONSTANTS
 
@@ -99,16 +96,15 @@ skipBtn.addEventListener("click", () => {
 // SKIP PORTFOLIO CONTAINER TO ABOUT CONTAINER
 
 portfolioArrow.addEventListener("click", () => {
-  // portfolioArrowCircle.classList.add("portfolio-arrow-circle-hidden");
+  if (isFirstVisit) {
+    isFirstVisit = false;
+  }
   portfolioArrowCircle.classList.add("arrow-circle-hidden");
-  // portfolioChevron.classList.add("portfolio-chevron-hidden");
   portfolioChevron.classList.add("chevron-hidden");
   portfolioArrow.classList.add("portfolio-arrow-slide-up");
-  // portfolioArrow.classList.add("arrow-slide-up");
   portfolioTitle.classList.add("portfolio-title-slide-up");
   portfolioSubtitle.classList.add("subtitle-container-slide-up");
   portfolioContainer.classList.add("portfolio-container-slide-up");
-  // portfolioContainer.classList.add("section-container-slide-up");
   aboutTextContainer.classList.add("text-container-slide-up");
   aboutTitle.classList.add("about-title-slide-up");
   aboutArrow.classList.add("about-arrow-slide-up");
@@ -116,9 +112,11 @@ portfolioArrow.addEventListener("click", () => {
 });
 
 aboutLink.addEventListener("click", () => {
-  // portfolioArrowCircle.classList.add("portfolio-arrow-circle-hidden");
+  if (!isFirstVisit) {
+    resetAnimations();
+  }
+  resetAnimations();
   portfolioArrowCircle.classList.add("arrow-circle-hidden");
-  // portfolioChevron.classList.add("portfolio-chevron-hidden");
   portfolioChevron.classList.add("chevron-hidden");
   portfolioArrow.classList.add("portfolio-arrow-slide-up");
   portfolioTitle.classList.add("portfolio-title-slide-up");
@@ -128,28 +126,6 @@ aboutLink.addEventListener("click", () => {
   aboutTitle.classList.add("about-title-slide-up");
   aboutArrow.classList.add("about-arrow-slide-up");
   aboutLink.classList.add("navLink-visited");
-  // ******************************************************************
-  // aboutArrowCircle.classList.remove("arrow-circle-hidden");
-  // aboutChevron.classList.remove("chevron-hidden");
-  // aboutTextContainer.classList.remove("text-container-slide-up2");
-  // aboutTitle.classList.remove("about-title-slide-up2");
-  // aboutContainer.classList.remove("about-container-slide-up");
-  // skillsContainer.classList.remove("skills-container-slide-up");
-  // htmlLevel.classList.remove("skill-level-full-width");
-  // cssLevel.classList.remove("skill-level-full-width");
-  // scssLevel.classList.remove("skill-level-full-width");
-  // jsLevel.classList.remove("skill-level-full-width");
-  // nodeLevel.classList.remove("skill-level-full-width");
-  // reactLevel.classList.remove("skill-level-full-width");
-  // gitLevel.classList.remove("skill-level-full-width");
-  // githubLevel.classList.remove("skill-level-full-width");
-  // psdLevel.classList.remove("skill-level-full-width");
-  // aiLevel.classList.remove("skill-level-full-width");
-  // idLevel.classList.remove("skill-level-full-width");
-  // formationContainer.classList.remove("formation-container-slide-up");
-  // experienceContainer.classList.remove("experience-container-slide-up");
-  // resumeArrow.classList.remove("resume-arrow-slide-up");
-  // resumeLink.classList.remove("navLink-visited");
 });
 
 // SKIP ABOUT CONTAINER TO EXPERIENCE CONTAINER
@@ -183,6 +159,15 @@ aboutArrow.addEventListener("click", () => {
 });
 
 resumeLink.addEventListener("click", () => {
+  resetAnimations();
+
+  portfolioArrowCircle.classList.add("arrow-circle-hidden");
+  portfolioChevron.classList.add("chevron-hidden");
+  portfolioArrow.classList.add("portfolio-arrow-slide-up");
+  portfolioTitle.classList.add("portfolio-title-slide-up");
+  portfolioSubtitle.classList.add("subtitle-container-slide-up");
+  portfolioContainer.classList.add("portfolio-container-slide-up");
+
   aboutArrowCircle.classList.add("arrow-circle-hidden");
   aboutChevron.classList.add("chevron-hidden");
   aboutTextContainer.classList.add("text-container-slide-up2");
@@ -221,9 +206,6 @@ const tabExperience = document.querySelector(".tab-experience");
 const tabChevron1 = document.querySelector(".tab-chevron1");
 const tabChevron2 = document.querySelector(".tab-chevron2");
 const tabChevron3 = document.querySelector(".tab-chevron3");
-// const tabContainer = document.querySelector(".tab-container");
-// const experienceContent1 = document.querySelector(".experience-content1");
-// const experienceContent2 = document.querySelector(".experience-content2");
 const skillsWrapperResponsive = document.querySelector(
   ".skills-wrapper-responsive"
 );
@@ -299,6 +281,41 @@ resumeArrow.addEventListener("click", () => {
   worksLink.classList.add("navLink-visited");
 });
 
+worksLink.addEventListener("click", () => {
+  resetAnimations();
+
+  portfolioArrowCircle.classList.add("arrow-circle-hidden");
+  portfolioChevron.classList.add("chevron-hidden");
+  portfolioArrow.classList.add("portfolio-arrow-slide-up");
+  portfolioTitle.classList.add("portfolio-title-slide-up");
+  portfolioSubtitle.classList.add("subtitle-container-slide-up");
+  portfolioContainer.classList.add("portfolio-container-slide-up");
+
+  resumeArrowCircle.classList.add("arrow-circle-hidden");
+  resumeChevron.classList.add("chevron-hidden");
+  resumeTitle.classList.add("resume-title-slide-up2");
+  resumeTitle.classList.remove("resume-title-slide-up");
+  skillsContainer.classList.add("skills-container-slide-up2");
+  skillsContainer.classList.remove("skills-container-slide-up");
+  formationContainer.classList.add("formation-container-slide-up2");
+  formationContainer.classList.remove("formation-container-slide-up");
+  experienceContainer.classList.add("experience-container-slide-up2");
+  experienceContainer.classList.remove("experience-container-slide-up");
+  resumeContainer.classList.add("resume-container-slide-up");
+  worksTitle.classList.add("works-title-slide-show");
+  underlineHigh.classList.add("underline-high-full-width");
+  underlineLow.classList.add("underline-low-full-width");
+  website1.classList.add("website1-show");
+  website2.classList.add("website2-show");
+  website3.classList.add("website3-show");
+  scrollDotLeft.classList.add("scroll-dot-show");
+  scrollDotRight.classList.add("scroll-dot-show");
+  chevronLeft.classList.add("chevron-show");
+  chevronRight.classList.add("chevron-show");
+  resumeLink.classList.remove("navLink-visited");
+  worksLink.classList.add("navLink-visited");
+});
+
 // SLIDE CARROUSEL WORKS CONTAINER
 
 let currentIndex = 0;
@@ -343,3 +360,54 @@ navMobileBtn.addEventListener("click", () => {
   lineMobileBottom.classList.toggle("line-mobile-bottom-crossline");
   navMobileWrapper.classList.toggle("nav-mobile-wrapper-show");
 });
+
+// ********************************************************************************
+
+function resetAnimations() {
+  aboutTextContainer.classList.remove("text-container-slide-up");
+  aboutTitle.classList.remove("about-title-slide-up");
+  aboutArrow.classList.remove("about-arrow-slide-up");
+  aboutLink.classList.remove("navLink-visited");
+
+  aboutArrowCircle.classList.remove("arrow-circle-hidden");
+  aboutChevron.classList.remove("chevron-hidden");
+  aboutTextContainer.classList.remove("text-container-slide-up2");
+  aboutTitle.classList.remove("about-title-slide-up2");
+  aboutContainer.classList.remove("about-container-slide-up");
+  resumeTitle.classList.remove("resume-title-slide-up");
+  skillsContainer.classList.remove("skills-container-slide-up");
+  htmlLevel.classList.remove("skill-level-full-width");
+  cssLevel.classList.remove("skill-level-full-width");
+  scssLevel.classList.remove("skill-level-full-width");
+  jsLevel.classList.remove("skill-level-full-width");
+  nodeLevel.classList.remove("skill-level-full-width");
+  reactLevel.classList.remove("skill-level-full-width");
+  gitLevel.classList.remove("skill-level-full-width");
+  githubLevel.classList.remove("skill-level-full-width");
+  psdLevel.classList.remove("skill-level-full-width");
+  aiLevel.classList.remove("skill-level-full-width");
+  idLevel.classList.remove("skill-level-full-width");
+  formationContainer.classList.remove("formation-container-slide-up");
+  experienceContainer.classList.remove("experience-container-slide-up");
+  resumeArrow.classList.remove("resume-arrow-slide-up");
+  resumeLink.classList.remove("navLink-visited");
+
+  resumeArrowCircle.classList.remove("arrow-circle-hidden");
+  resumeChevron.classList.remove("chevron-hidden");
+  resumeTitle.classList.remove("resume-title-slide-up2");
+  skillsContainer.classList.remove("skills-container-slide-up2");
+  formationContainer.classList.remove("formation-container-slide-up2");
+  experienceContainer.classList.remove("experience-container-slide-up2");
+  resumeContainer.classList.remove("resume-container-slide-up");
+  worksTitle.classList.remove("works-title-slide-show");
+  underlineHigh.classList.remove("underline-high-full-width");
+  underlineLow.classList.remove("underline-low-full-width");
+  website1.classList.remove("website1-show");
+  website2.classList.remove("website2-show");
+  website3.classList.remove("website3-show");
+  scrollDotLeft.classList.remove("scroll-dot-show");
+  scrollDotRight.classList.remove("scroll-dot-show");
+  chevronLeft.classList.remove("chevron-show");
+  chevronRight.classList.remove("chevron-show");
+  worksLink.classList.remove("navLink-visited");
+}
