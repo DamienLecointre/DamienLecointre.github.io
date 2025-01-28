@@ -321,8 +321,8 @@ resumeArrow.addEventListener("click", () => {
   website4.classList.add("website1-show");
   website5.classList.add("website2-show");
   website6.classList.add("website3-show");
-  scrollDotLeft.classList.add("scroll-dot-show");
-  scrollDotRight.classList.add("scroll-dot-show");
+  // scrollDotLeft.classList.add("scroll-dot-show");
+  // scrollDotRight.classList.add("scroll-dot-show");
   chevronLeft.classList.add("chevron-show");
   chevronRight.classList.add("chevron-show");
   resumeLink.classList.remove("navLink-visited");
@@ -410,32 +410,58 @@ worksLinkMobile.addEventListener("click", () => {
 
 // SLIDE CARROUSEL WORKS CONTAINER
 
+// let currentIndex = 0;
+// const totalSlides = document.querySelectorAll(".projects-wrapper").length;
+
+// function updateSlider(index) {
+//   const offset = -index * 100;
+//   galleryWrapper.style.transform = `translateX(${offset}%)`;
+// }
+
+// leftArrow.addEventListener("click", () => {
+//   currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+//   updateSlider(currentIndex);
+// });
+
+// rightArrow.addEventListener("click", () => {
+//   currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+//   updateSlider(currentIndex);
+// });
+
+// ****************************************************************************************
+
+const images = document.querySelectorAll(".gallery-wrapper a");
+
+// Variables to track the current position
 let currentIndex = 0;
-const totalSlides = document.querySelectorAll(".projects-wrapper").length;
+const totalImages = images.length;
+const imageWidth = images[0].offsetWidth; // Width of one image (adjusted by CSS)
 
+// Update the slider's position
 function updateSlider(index) {
-  const offset = -index * 100;
-  galleryWrapper.style.transform = `translateX(${offset}%)`;
-
-  dots.forEach((dot) => dot.classList.remove("active"));
-  dots[index].classList.add("active");
+  const offset = -index * imageWidth;
+  galleryWrapper.style.transform = `translateX(${offset}px)`;
 }
 
+// Click event for the left arrow
 leftArrow.addEventListener("click", () => {
-  currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
-  updateSlider(currentIndex);
-});
-
-rightArrow.addEventListener("click", () => {
-  currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
-  updateSlider(currentIndex);
-});
-
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentIndex = index;
+  if (currentIndex > 0) {
+    currentIndex--;
     updateSlider(currentIndex);
-  });
+  }
+});
+
+// Click event for the right arrow
+rightArrow.addEventListener("click", () => {
+  if (currentIndex < totalImages - 1) {
+    currentIndex++;
+    updateSlider(currentIndex);
+  }
+});
+
+// Ensure the correct image width is calculated on resize
+window.addEventListener("resize", () => {
+  updateSlider(currentIndex);
 });
 
 // SHOW BURGERMENU

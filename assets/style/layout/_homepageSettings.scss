@@ -24,12 +24,12 @@
     width: 100%;
   }
 
-  @keyframes PortfoliotextShow {
-    to {
-      opacity: 1;
-      visibility: visible;
-    } 
-  }
+  // @keyframes PortfoliotextShow {
+  //   to {
+  //     opacity: 1;
+  //     visibility: visible;
+  //   } 
+  // }
 
   .skip-intro-animation {
     animation: skipintro 3s ease-in-out forwards;

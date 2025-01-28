@@ -77,7 +77,6 @@
     display: flex;
     align-items: center;
     transition: transform 0.5s ease-in-out;
-    touch-action: pan-x;
 
     @media only screen and (max-width: 1290px) {
       max-height: 80%;
@@ -87,22 +86,6 @@
       max-height: 100%;
     }
   }
-
-  // .projects-wrapper {
-  //   height: 70%;
-  //   width: 96%;
-  //   display: grid;
-  //   grid-template-rows: 1fr;
-  //   grid-template-columns: repeat(3, 1fr);
-  //   gap: $space-small2;
-  //   flex: none;
-  //   margin: 0 1em;
-
-  //   @media only screen and (max-width: 740px) {
-  //     width: 100%;
-  //     gap: $space-small1;
-  //   }
-  // }
 
   .website1,
   .website2,
@@ -164,6 +147,10 @@
       transform: translate(-50%, -50%) scale(0);
       transition: all 0.5s ease-in-out;
       z-index: 5;
+
+      @media only screen and (max-width: 960px) {
+        display: none;
+      }
     }
 
     &::after {
@@ -177,10 +164,18 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.5s ease-in-out;
+
+      @media only screen and (max-width: 960px) {
+        display: none;
+      }
     }
 
     &:hover {
       border: 1px solid $bg-light;
+
+      @media only screen and (max-width: 960px) {
+        border: 1px solid $bg-accent;
+      }
     }
 
     &:hover::before {
@@ -217,6 +212,10 @@
     transform: translate(-50%, -100%);
     transition: all 0.5s ease-in-out;
     z-index: 5;
+
+    @media only screen and (max-width: 960px) {
+      display: none;
+    }
   }
 
   .project-subtitle {
@@ -228,6 +227,10 @@
     transform: translate(-50%, 100%);
     transition: all 0.5s ease-in-out;
     z-index: 5;
+
+    @media only screen and (max-width: 960px) {
+      display: none;
+    }
   }
 
   .project-icons-container {
@@ -244,6 +247,10 @@
     transform: translate(-50%, -50%);
     transition: all 0.3s ease-in-out;
     z-index: 50;
+
+    @media only screen and (max-width: 960px) {
+      display: none;
+    }
   }
 
   .inprogess-title {
@@ -283,6 +290,13 @@
     animation: underlineFullWidth 4.5s ease-out forwards;
   }
 
+  .underline {
+    height: 1px;
+    width: 100%;
+    background: $bg-accent;
+    transform: translateX(-100%);
+  }
+
   .chevron-slider {
     position: absolute;
     width: 8%;
@@ -301,7 +315,19 @@
     }
 
     @media only screen and (max-width: 740px) {
-      display: none;
+      width: 15%;
+    }
+
+    @media only screen and (max-width: 630px) {
+      width: 20%;
+    }
+
+    @media only screen and (max-width: 480px) {
+      width: 25%;
+    }
+
+    @media only screen and (max-width: 380px) {
+      width: 35%;
     }
   }
 
@@ -331,51 +357,44 @@
     }
   }
 
-  .underline {
-    height: 1px;
-    width: 100%;
-    background: $bg-accent;
-    transform: translateX(-100%);
-  }
+  // .scroll-dot-container {
+  //   position: absolute;
+  //   width: 4%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   top: 15px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   z-index: 10;
 
-  .scroll-dot-container {
-    position: absolute;
-    width: 4%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+  //   @media only screen and (max-width: 740px) {
+  //     display: none;
+  //   }
+  // }
 
-    @media only screen and (max-width: 740px) {
-      display: none;
-    }
-  }
+  // .scroll-dot {
+  //   height: 10px;
+  //   width: 10px;
+  //   background: $bg-light-dark;
+  //   border: 1px solid $bg-accent;
+  //   border-radius: 50%;
+  //   opacity: 0;
+  //   visibility: hidden;
+  // }
 
-  .scroll-dot {
-    height: 10px;
-    width: 10px;
-    background: $bg-light-dark;
-    border: 1px solid $bg-accent;
-    border-radius: 50%;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .scroll-dot.active {
-    background: $bg-accent;
-  }
+  // .scroll-dot.active {
+  //   background: $bg-accent;
+  // }
   
-  .scroll-dot-show {
-    animation: scrollDotShow 3s ease-in-out .5s forwards;
+  // .scroll-dot-show {
+  //   animation: scrollDotShow 3s ease-in-out .5s forwards;
     
-    @keyframes scrollDotShow {
-      to {
-        opacity: 1;
-        visibility: visible;
-      } 
-    }
-  }
+  //   @keyframes scrollDotShow {
+  //     to {
+  //       opacity: 1;
+  //       visibility: visible;
+  //     } 
+  //   }
+  // }
 }

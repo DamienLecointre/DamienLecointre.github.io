@@ -29,6 +29,10 @@
       p:not(:nth-child(1)) {
         text-align: justify;
         padding-top: 1em;
+
+        @media only screen and (max-width: 495px) {
+          text-align: left;
+        }
       }
 
       i {

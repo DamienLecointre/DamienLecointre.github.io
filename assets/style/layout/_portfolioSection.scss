@@ -1,7 +1,6 @@
 #homepage-container {
 
   .portfolio-container {
-    // position: relative;
     position: absolute;
     height: 100%;
     width: 95%;
@@ -14,12 +13,18 @@
     z-index: 1000;
     transform: translateY(0);
     transition: all 3s ease-in;
-    // transition-delay: 2s;
     animation: PortfoliotextShow 1.5s ease-in 13s forwards;
 
     @media only screen and (max-width: 960px)  {
       width: 100%;
     }
+  }
+
+  @keyframes PortfoliotextShow {
+    to {
+      opacity: 1;
+      visibility: visible;
+    } 
   }
 
   .portfolio-container-slide-up {
@@ -168,47 +173,4 @@
   .portfolio-arrow-slide-up {
     transform: translate(-50%, 10vh);
   }
-  
-  // .portfolio-arrow-circle {
-  //   position: absolute;
-  //   @extend %full-viewport;
-  //   border: 1px solid $bg-accent;
-  //   border-radius: 50%;
-  //   ------
-  //   @extend %item-visible;
-  //   transform: scale(1) translateY(0);
-  //   @extend %transition-speed-all;
-  // }
-
-  // .portfolio-arrow-circle-hidden {
-  //   animation: portfolioArrowCircleHidden .5s ease-in forwards;
-
-  //   @keyframes portfolioArrowCircleHidden {
-  //     0% {
-  //       opacity: 1;
-  //       visibility: visible;
-  //       transform: scale(1.2) translateY(0);
-  //     }
-  //     50% {
-  //       opacity: 1;
-  //       visibility: visible;
-  //       transform: scale(1.2) translateY(0);
-  //     }
-  //     100% {
-  //       opacity: 0;
-  //       visibility: hidden;
-  //       transform: scale(2) translateY(0);
-  //     }
-  //   }
-  // }
-
-  // .portfolio-chevron {
-  //   @extend %item-visible;
-  //   @extend %transition-medium-start;
-  // }
-
-  // .portfolio-chevron-hidden {
-  //   @extend %item-hidden;
-  //   animation: none;
-  // }
 }
