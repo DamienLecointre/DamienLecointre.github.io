@@ -338,6 +338,8 @@ worksLink.addEventListener("click", () => {
   portfolioTitle.classList.add("portfolio-title-slide-up");
   portfolioSubtitle.classList.add("subtitle-container-slide-up");
   portfolioContainer.classList.add("portfolio-container-slide-up");
+  aboutContainer.classList.add("about-container-slide-up");
+  aboutTextContainer.classList.add("text-container-slide-up2");
 
   resumeArrowCircle.classList.add("arrow-circle-hidden");
   resumeChevron.classList.add("chevron-hidden");
@@ -356,11 +358,11 @@ worksLink.addEventListener("click", () => {
   website1.classList.add("website1-show");
   website2.classList.add("website2-show");
   website3.classList.add("website3-show");
-  website4.classList.add("website4-show");
-  website5.classList.add("website5-show");
-  website6.classList.add("website6-show");
-  scrollDotLeft.classList.add("scroll-dot-show");
-  scrollDotRight.classList.add("scroll-dot-show");
+  website4.classList.add("website1-show");
+  website5.classList.add("website2-show");
+  website6.classList.add("website3-show");
+  // scrollDotLeft.classList.add("scroll-dot-show");
+  // scrollDotRight.classList.add("scroll-dot-show");
   chevronLeft.classList.add("chevron-show");
   chevronRight.classList.add("chevron-show");
   resumeLink.classList.remove("navLink-visited");
@@ -377,6 +379,8 @@ worksLinkMobile.addEventListener("click", () => {
   portfolioTitle.classList.add("portfolio-title-slide-up");
   portfolioSubtitle.classList.add("subtitle-container-slide-up");
   portfolioContainer.classList.add("portfolio-container-slide-up");
+  aboutContainer.classList.add("about-container-slide-up");
+  aboutTextContainer.classList.add("text-container-slide-up2");
 
   resumeArrowCircle.classList.add("arrow-circle-hidden");
   resumeChevron.classList.add("chevron-hidden");
@@ -395,11 +399,11 @@ worksLinkMobile.addEventListener("click", () => {
   website1.classList.add("website1-show");
   website2.classList.add("website2-show");
   website3.classList.add("website3-show");
-  website4.classList.add("website4-show");
-  website5.classList.add("website5-show");
-  website6.classList.add("website6-show");
-  scrollDotLeft.classList.add("scroll-dot-show");
-  scrollDotRight.classList.add("scroll-dot-show");
+  website4.classList.add("website1-show");
+  website5.classList.add("website2-show");
+  website6.classList.add("website3-show");
+  // scrollDotLeft.classList.add("scroll-dot-show");
+  // scrollDotRight.classList.add("scroll-dot-show");
   chevronLeft.classList.add("chevron-show");
   chevronRight.classList.add("chevron-show");
 });
@@ -496,8 +500,8 @@ function resetAnimations() {
   website4.classList.remove("website1-show");
   website5.classList.remove("website2-show");
   website6.classList.remove("website3-show");
-  scrollDotLeft.classList.remove("scroll-dot-show");
-  scrollDotRight.classList.remove("scroll-dot-show");
+  // scrollDotLeft.classList.remove("scroll-dot-show");
+  // scrollDotRight.classList.remove("scroll-dot-show");
   chevronLeft.classList.remove("chevron-show");
   chevronRight.classList.remove("chevron-show");
   worksLink.classList.remove("navLink-visited");

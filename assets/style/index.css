@@ -10,7 +10,7 @@
   list-style: none;
 }
 
-#homepage-container .nav-mobile-container, #homepage-container .arrow-circle, #intro-container .text-container, #intro-container .quote-container, #intro-container .loading-container .text-wrapper, #intro-container .intro-container, #intro-container .btn-container {
+#homepage-container .arrow-circle, #intro-container .text-container, #intro-container .quote-container, #intro-container .loading-container .text-wrapper, #intro-container .intro-container, #intro-container .btn-container {
   height: 100%;
   width: 100%;
 }
@@ -2717,8 +2717,13 @@ p {
     height: 60%;
   }
 }
+@media only screen and (max-width: 740px) {
+  #homepage-container .projects-container {
+    overflow: visible;
+  }
+}
 #homepage-container .gallery-wrapper {
-  height: 100%;
+  height: 70%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2730,6 +2735,8 @@ p {
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -ms-touch-action: pan-x;
+      touch-action: pan-x;
 }
 @media only screen and (max-width: 1290px) {
   #homepage-container .gallery-wrapper {
@@ -2740,27 +2747,6 @@ p {
   #homepage-container .gallery-wrapper {
     max-height: 100%;
   }
-}
-#homepage-container .projects-wrapper {
-  height: 70%;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  padding: 0 1em;
-}
-@media only screen and (max-width: 740px) {
-  #homepage-container .projects-wrapper {
-    gap: 1em;
-    overflow-x: scroll;
-  }
-}
-#homepage-container .projects-wrapper::-webkit-scrollbar {
-  display: block;
 }
 #homepage-container .website1,
 #homepage-container .website2,
@@ -2798,13 +2784,17 @@ p {
 #homepage-container .project-content {
   position: relative;
   height: 100%;
-  width: 100%;
+  width: calc(33.3333333333% - 2em);
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   background: #bdbdbd;
   border: 1px solid #ff6f28;
   overflow: hidden;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
+  margin: 0 1em;
 }
 @media only screen and (max-width: 740px) {
   #homepage-container .project-content {
@@ -2835,6 +2825,7 @@ p {
   width: 100%;
   background: #ff6f28;
   top: 0;
+  left: 0;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.5s ease-in-out;
@@ -2853,13 +2844,17 @@ p {
 }
 #homepage-container .project-content:hover .project-title {
   top: 50%;
-  -webkit-transform: translate(-50%, -120%);
-          transform: translate(-50%, -120%);
+  -webkit-transform: translate(-50%, -150%);
+          transform: translate(-50%, -150%);
 }
 #homepage-container .project-content:hover .project-subtitle {
   bottom: 50%;
-  -webkit-transform: translate(-50%, 120%);
-          transform: translate(-50%, 120%);
+  -webkit-transform: translate(-50%, 150%);
+          transform: translate(-50%, 150%);
+}
+#homepage-container .project-content:hover .project-icons-container {
+  opacity: 1;
+  visibility: visible;
 }
 #homepage-container .project-title {
   position: absolute;
@@ -2884,6 +2879,26 @@ p {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   z-index: 5;
+}
+#homepage-container .project-icons-container {
+  position: absolute;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #f7f7f9;
+  background: #ff6f28;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 50;
 }
 #homepage-container .inprogess-title {
   width: 100%;
@@ -3050,7 +3065,8 @@ p {
 #homepage-container .nav-mobile-container {
   display: none;
   position: relative;
-  overflow: hidden;
+  height: calc(40px + 1.5em);
+  width: 100%;
 }
 @media only screen and (max-width: 960px) {
   #homepage-container .nav-mobile-container {
@@ -3187,7 +3203,7 @@ p {
 }
 #homepage-container .nav-mobile-wrapper {
   position: absolute;
-  height: calc(100% - 40px - 2em);
+  height: calc(100vh - 40px + 1.5em - 120px);
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3206,8 +3222,8 @@ p {
   z-index: 4000;
 }
 #homepage-container .nav-mobile-wrapper-show {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
   opacity: 1;
   visibility: visible;
 }
