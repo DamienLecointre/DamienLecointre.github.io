@@ -94,15 +94,6 @@
       top: 12%;
       max-height: 495px;
     }
-
-    @media only screen and (max-width: 720px) {
-      width: 100%;
-    }
-  }
-
-  .skills-container-full-width {
-    width: 100%;
-    z-index: 500;
   }
 
   .title-section {
@@ -143,6 +134,19 @@
     width: 100%;
     @extend %transition-medium-all;
 
+    @media only screen and (max-width: 720px) {
+      height: 8%;
+    }
+
+    @media only screen and (max-width: 520px) {
+      height: 6%;
+      margin-top: .5em;
+    }
+
+    @media only screen and (max-width: 450px) {
+      height: 5%;
+    }
+
     .crossline {
       position: absolute;
       font-size: 1.5rem;
@@ -159,8 +163,13 @@
         transform: translate(0, -50%) scale(1.2);
       }
 
-      @media only screen and (max-width: 710px) {
+      @media only screen and (max-width: 720px) {
         font-size: $font-size19;
+        right: 0;
+      }
+
+      @media only screen and (max-width: 450px) {
+        font-size: $font-size16;
       }
     }
   }
@@ -175,22 +184,30 @@
     }
   }
 
-  .tab-wrapper-hidden {
-    opacity: 0;
-    visibility: hidden;
-    width: 0;
-  }
-
-  .container-disappear {
-    display: none;
-  }
-
   .title-tab {
     position: absolute;
     left: 0;
     top: 50%;
     transform: translate(0, -50%);
     padding: 0 $space-tiny1;
+    transition: all .3s ease-in-out;
+
+    @media only screen and (max-width: 720px) {
+      font-size: $font-size12;
+    }
+
+    @media only screen and (max-width: 520px) {
+      font-size: $font-size09;
+    }
+
+    @media only screen and (max-width: 450px) {
+      font-size: .5em;
+      padding: 0;
+    }
+  }
+
+  .title-tab-visited {
+    color: $color-accent;
   }
 
   .tab-underline {
@@ -206,28 +223,16 @@
     height: 90%;
     width: 100%;
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-120%);
+    transform: translate(100%, -120%);
+    padding-top: 2em;
     @extend %transition-medium-all;
 
-    @media only screen and (max-width: 1180px) {
-      width: 40%;
-      padding: 0 12em;
-    }
-
-    @media only screen and (max-width: 640px) {
-      padding: 0 8em;
-    }
-
-    @media only screen and (max-width: 500px) {
-      padding: 0 5em;
-    }
-
-    @media only screen and (max-width: 400px) {
-      padding: 0;
+    @media only screen and (max-width: 450px) {
+      width: 150%;
+      transform: translate(50%, -120%);
     }
   }
 
@@ -235,7 +240,12 @@
     width: 100%;
     opacity: 1;
     visibility: visible;
-    transform: translate(0, 0);
+    transform: translate(100%, 0);
+
+    @media only screen and (max-width: 450px) {
+      width: 150%;
+      transform: translate(50%, 0);
+    }
   }
 
   .skills-wrapper {
@@ -258,6 +268,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: 1em;
   }
 
   .logo-container {
@@ -363,12 +374,6 @@
     @media only screen and (max-width: 960px) {
       top: 12%;
     }
-
-    @media only screen and (max-width: 720px) {
-      width: 100%;
-      top: 22%;
-      left: 0;
-    }
   }
 
   .formation-container-full-width {
@@ -378,24 +383,55 @@
   }
 
   .formation-wrapper-responsive {
+    width: 50vw;
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;
-    transform: translateY(-120%);
+    transform: translate(-15%,-120%);
     @extend %transition-medium-all;
 
     @media only screen and (max-width: 960px) {
       height: 100%;
       max-height: 380px;
       padding-right: 2em;
+      transform: translate(-25%,-120%);
+    }
+
+    @media only screen and (max-width: 825px) {
+      width: 55vw;
+      transform: translate(-30%,-120%);
+    }
+
+    @media only screen and (max-width: 720px) {
+      width: 70vw;
+    }
+
+    @media only screen and (max-width: 590px) {
+      width: 88vw;
+      transform: translate(-33%,-120%);
+    }
+
+    @media only screen and (max-width: 450px) {
+      width: 85vw;
     }
   }
 
   .formation-wrapper-responsive-show {
-    width: 100%;
     opacity: 1;
     visibility: visible;
-    transform: translate(0, 0);
+    transform: translate(-15%,0);
+
+    @media only screen and (max-width: 960px) {
+      transform: translate(-25%,0);
+    }
+
+    @media only screen and (max-width: 825px) {
+      transform: translate(-30%,0);
+    }
+
+    @media only screen and (max-width: 590px) {
+      transform: translate(-33%,0);
+    }
   }
 
   .formation-wrapper {
@@ -419,6 +455,14 @@
     width: 100%;
     display: flex;
     padding-top: $space-small1;
+  }
+
+  .formation-content-first {
+    padding-top: 3em;
+  }
+
+  .formation-content-last {
+    padding-bottom: 3em;
   }
 
   .date-content {
@@ -473,12 +517,6 @@
     @media only screen and (max-width: 960px) {
       top: 12%;
     }
-
-    @media only screen and (max-width: 720px) {
-      width: 100%;
-      top: 32%;
-      left: 0;
-    }
   }
 
   .experience-container-full-width {
@@ -495,10 +533,11 @@
 
   .experience-wrapper-responsive {
     max-height: 340px;
+    width: 50vw;
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;
-    transform: translateY(-120%);
+    transform: translate(-75%, -120%);
     @extend %transition-medium-all;
     overflow-y: scroll;
 
@@ -511,28 +550,32 @@
     }
 
     @media only screen and (max-width: 960px) {
-      padding-right: 0;
+      width: 93vw;
+      padding-right: 1em;
+      transform: translate(-68%, -120%);
     }
 
-    @media only screen and (max-width: 810px) {
-      padding-right: 2em;
+    @media only screen and (max-width: 650px) {
+      width: 90vw;
     }
 
-    @media only screen and (max-width: 600px) {
-      padding-right: 2em;
+    @media only screen and (max-width: 520px) {
+      width: 88vw;
     }
 
-    @media only screen and (max-width: 570px) {
-      opacity: 0;
-      visibility: hidden;
+    @media only screen and (max-width: 430px) {
+      width: 84vw;
     }
   }
 
   .experience-wrapper-responsive-show {
-    width: 100%;
     opacity: 1;
     visibility: visible;
-    transform: translate(0, 0);
+    transform: translate(-75%, 0);
+
+    @media only screen and (max-width: 960px) {
+      transform: translate(-68%, 0);
+    }
   }
 
   .experience-wrapper {
@@ -560,6 +603,16 @@
 
   .experience-content1 {
     margin-bottom: 1em;
+
+    @media only screen and (max-width: 960px) {
+      padding-top: 2em;
+    } 
+  }
+
+  .experience-content2 {
+    @media only screen and (max-width: 1110px) {
+      padding-bottom: 3em;
+    }
   }
 
   .text-content {

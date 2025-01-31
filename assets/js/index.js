@@ -183,6 +183,9 @@ aboutArrow.addEventListener("click", () => {
 
 resumeLink.addEventListener("click", () => {
   resetAnimations();
+  resetAccordionMenuSkills();
+  resetAccordionMenuFormation();
+  resetAccordionMenuExperience();
 
   portfolioArrowCircle.classList.add("arrow-circle-hidden");
   portfolioChevron.classList.add("chevron-hidden");
@@ -221,6 +224,9 @@ resumeLink.addEventListener("click", () => {
 resumeLinkMobile.addEventListener("click", () => {
   resetNavMobile();
   resetAnimations();
+  resetAccordionMenuSkills();
+  resetAccordionMenuFormation();
+  resetAccordionMenuExperience();
   portfolioArrowCircle.classList.add("arrow-circle-hidden");
   portfolioChevron.classList.add("chevron-hidden");
   portfolioArrow.classList.add("portfolio-arrow-slide-up");
@@ -257,6 +263,9 @@ resumeLinkMobile.addEventListener("click", () => {
 const tabSkills = document.querySelector(".tab-skills");
 const tabFormation = document.querySelector(".tab-formation");
 const tabExperience = document.querySelector(".tab-experience");
+const titleTab1 = document.querySelector(".title-tab1");
+const titleTab2 = document.querySelector(".title-tab2");
+const titleTab3 = document.querySelector(".title-tab3");
 const crosslineSkills = document.querySelector(".crossline-skills");
 const crosslineFormation = document.querySelector(".crossline-formation");
 const crosslineExperience = document.querySelector(".crossline-experience");
@@ -271,31 +280,42 @@ const experienceWrapperResponsive = document.querySelector(
 );
 
 crosslineSkills.addEventListener("click", () => {
+  resetAccordionMenuFormation();
+  resetAccordionMenuExperience();
+
   crosslineSkills.classList.toggle("crossline-rotation");
   skillsWrapperResponsive.classList.toggle("skills-wrapper-responsive-show");
-  tabFormation.classList.toggle("tab-wrapper-hidden");
-  tabExperience.classList.toggle("tab-wrapper-hidden");
-  skillsContainer.classList.toggle("skills-container-full-width");
+  titleTab1.classList.toggle("title-tab-visited");
+  // tabFormation.classList.toggle("tab-wrapper-hidden");
+  // tabExperience.classList.toggle("tab-wrapper-hidden");
+  // skillsContainer.classList.toggle("skills-container-full-width");
 });
 
 crosslineFormation.addEventListener("click", () => {
+  resetAccordionMenuSkills();
+  resetAccordionMenuExperience();
   crosslineFormation.classList.toggle("crossline-rotation");
   formationWrapperResponsive.classList.toggle(
     "formation-wrapper-responsive-show"
   );
-  tabSkills.classList.toggle("tab-wrapper-hidden");
-  tabExperience.classList.toggle("tab-wrapper-hidden");
-  formationContainer.classList.toggle("formation-container-full-width");
+  titleTab2.classList.toggle("title-tab-visited");
+  // tabSkills.classList.toggle("tab-wrapper-hidden");
+  // tabExperience.classList.toggle("tab-wrapper-hidden");
+  // formationContainer.classList.toggle("formation-container-full-width");
 });
 
 crosslineExperience.addEventListener("click", () => {
+  resetAccordionMenuSkills();
+  resetAccordionMenuFormation();
+
   crosslineExperience.classList.toggle("crossline-rotation");
   experienceWrapperResponsive.classList.toggle(
     "experience-wrapper-responsive-show"
   );
-  tabSkills.classList.toggle("tab-wrapper-hidden");
-  tabFormation.classList.toggle("tab-wrapper-hidden");
-  experienceContainer.classList.toggle("experience-container-full-width");
+  titleTab3.classList.toggle("title-tab-visited");
+  // tabSkills.classList.toggle("tab-wrapper-hidden");
+  // tabFormation.classList.toggle("tab-wrapper-hidden");
+  // experienceContainer.classList.toggle("experience-container-full-width");
 });
 
 // SKIP EXPERIENCE CONTAINER TO WORKS CONTAINER
@@ -432,18 +452,15 @@ worksLinkMobile.addEventListener("click", () => {
 
 const images = document.querySelectorAll(".gallery-wrapper a");
 
-// Variables to track the current position
 let currentIndex = 0;
 const totalImages = images.length;
-const imageWidth = images[0].offsetWidth; // Width of one image (adjusted by CSS)
+const imageWidth = images[0].offsetWidth;
 
-// Update the slider's position
 function updateSlider(index) {
   const offset = -index * imageWidth;
   galleryWrapper.style.transform = `translateX(${offset}px)`;
 }
 
-// Click event for the left arrow
 leftArrow.addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
@@ -451,7 +468,6 @@ leftArrow.addEventListener("click", () => {
   }
 });
 
-// Click event for the right arrow
 rightArrow.addEventListener("click", () => {
   if (currentIndex < totalImages - 1) {
     currentIndex++;
@@ -459,7 +475,6 @@ rightArrow.addEventListener("click", () => {
   }
 });
 
-// Ensure the correct image width is calculated on resize
 window.addEventListener("resize", () => {
   updateSlider(currentIndex);
 });
@@ -538,4 +553,26 @@ function resetNavMobile() {
   lineMobileMiddle.classList.remove("line-mobile-middle-crossline");
   lineMobileBottom.classList.remove("line-mobile-bottom-crossline");
   navMobileWrapper.classList.remove("nav-mobile-wrapper-show");
+}
+
+function resetAccordionMenuSkills() {
+  crosslineSkills.classList.remove("crossline-rotation");
+  skillsWrapperResponsive.classList.remove("skills-wrapper-responsive-show");
+  titleTab1.classList.remove("title-tab-visited");
+}
+
+function resetAccordionMenuFormation() {
+  crosslineFormation.classList.remove("crossline-rotation");
+  formationWrapperResponsive.classList.remove(
+    "formation-wrapper-responsive-show"
+  );
+  titleTab2.classList.remove("title-tab-visited");
+}
+
+function resetAccordionMenuExperience() {
+  crosslineExperience.classList.remove("crossline-rotation");
+  experienceWrapperResponsive.classList.remove(
+    "experience-wrapper-responsive-show"
+  );
+  titleTab3.classList.remove("title-tab-visited");
 }
