@@ -450,33 +450,40 @@ worksLinkMobile.addEventListener("click", () => {
 
 // ****************************************************************************************
 
+const slider = document.querySelector(".gallery-wrapper");
 const images = document.querySelectorAll(".gallery-wrapper a");
 
 let currentIndex = 0;
 const totalImages = images.length;
 const imageWidth = images[0].offsetWidth;
 
-function updateSlider(index) {
-  const offset = -index * imageWidth;
-  galleryWrapper.style.transform = `translateX(${offset}px)`;
+console.log(currentIndex);
+console.log(totalImages);
+console.log(imageWidth);
+
+function updateSlider(index, sens) {
+  const offset = index * imageWidth;
+  const gap = index > 0 ? index * 32 : 0;
+  // galleryWrapper.style.transform = `translateX(${offset + gap}px)`;
+  slider.scrollTo({
+    left: offset + gap,
+    behavior: "smooth",
+  });
 }
 
 leftArrow.addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
-    updateSlider(currentIndex);
+    console.log(currentIndex);
+    updateSlider(currentIndex, "arriere");
   }
 });
 
 rightArrow.addEventListener("click", () => {
   if (currentIndex < totalImages - 1) {
     currentIndex++;
-    updateSlider(currentIndex);
+    updateSlider(currentIndex, "avant");
   }
-});
-
-window.addEventListener("resize", () => {
-  updateSlider(currentIndex);
 });
 
 // SHOW BURGERMENU
