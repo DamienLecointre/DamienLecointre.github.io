@@ -3023,6 +3023,10 @@ p {
     display: none;
   }
 }
+#homepage-container .project-icons-container img {
+  aspect-ratio: 1/1;
+  width: 10%;
+}
 #homepage-container .inprogess-title {
   width: 100%;
   position: absolute;

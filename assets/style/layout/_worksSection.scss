@@ -253,6 +253,10 @@
     @media only screen and (max-width: 960px) {
       display: none;
     }
+    img {
+      aspect-ratio: 1/1;
+      width: 10%;
+    }
   }
 
   .inprogess-title {
