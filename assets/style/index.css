@@ -2817,7 +2817,7 @@ p {
   }
 }
 #homepage-container .gallery-wrapper {
-  height: 70%;
+  height: 60%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2896,6 +2896,8 @@ p {
 }
 #homepage-container .project-content img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #homepage-container .project-content::before {
   content: "";
