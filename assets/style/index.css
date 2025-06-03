@@ -2881,7 +2881,7 @@ p {
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
-  background: #bdbdbd;
+  background: #ff6f28;
   border: 1px solid #ff6f28;
   overflow: hidden;
   -webkit-transition: all 0.5s ease-in-out;
@@ -2896,8 +2896,8 @@ p {
 }
 #homepage-container .project-content img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #homepage-container .project-content::before {
   content: "";
@@ -2965,6 +2965,12 @@ p {
 #homepage-container .project-content:hover .project-icons-container {
   opacity: 1;
   visibility: visible;
+}
+#homepage-container .project-content .fit-container {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #homepage-container .project-title {
   position: absolute;

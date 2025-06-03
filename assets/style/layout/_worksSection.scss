@@ -123,7 +123,7 @@
     height: 100%;
     width: calc((100% / 3) - 2em);
     flex: none;
-    background: $bg-light-dark;
+    background: $color-accent;
     border: 1px solid $bg-accent;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
@@ -135,8 +135,9 @@
     }
 
     img {
+      // height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     &::before {
@@ -203,6 +204,12 @@
     &:hover .project-icons-container {
       opacity: 1;
       visibility: visible;
+    }
+
+    .fit-container {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
     }
   }
 
