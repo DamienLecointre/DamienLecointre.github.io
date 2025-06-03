@@ -3008,6 +3008,9 @@ p {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #f7f7f9;
   background: #ff6f28;
   top: 50%;
@@ -3027,7 +3030,9 @@ p {
 }
 #homepage-container .project-icons-container img {
   aspect-ratio: 1/1;
-  width: 10%;
+  width: 15%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #homepage-container .inprogess-title {
   width: 100%;
